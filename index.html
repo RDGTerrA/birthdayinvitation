@@ -107,6 +107,39 @@ h2{margin:0 0 28px;text-align:left;font-family:'Space Grotesk',Arial,sans-serif;
 .music{right:18px;bottom:18px;width:52px;height:52px;border:0;border-radius:0;background:var(--gold);color:#171717;box-shadow:none;font-family:'DM Mono',monospace}.music.on{animation:none}
 .loader{background:#171717}.loader-num{font-family:'Space Grotesk',Arial,sans-serif;color:var(--gold);font-weight:700}.loader p{font-family:'DM Mono',monospace;color:#f5f3ee;font-size:11px}
 @media(max-width:520px){.hero,.section,.footer{padding-left:22px;padding-right:22px}.cards{grid-template-columns:1fr}.card{min-height:auto}.timer{grid-template-columns:repeat(2,1fr)}.number{letter-spacing:-8px}}
+/* Туған күн мерекесінің жарқын дизайны */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Fredoka:wght@400;500;600;700&display=swap');
+:root{--cream:#fff1d6;--paper:#fffaf1;--ink:#252525;--gold:#ff6448;--gold2:#ffc857;--muted:#6a6862;--line:rgba(37,37,37,.16)}
+body{background:#243b53;font-family:'Fredoka',Arial,sans-serif}
+.page{max-width:760px;background:var(--paper)}
+.hero{min-height:100svh;position:relative;align-items:center;padding:42px 34px;background:var(--cream);color:var(--ink);overflow:hidden}
+.hero:before{display:block;content:"";position:absolute;inset:0;z-index:0;border:18px solid transparent;background:radial-gradient(circle at 12% 18%,#ff6448 0 5px,transparent 6px),radial-gradient(circle at 85% 20%,#35b8b0 0 6px,transparent 7px),radial-gradient(circle at 18% 78%,#ffc857 0 5px,transparent 6px),radial-gradient(circle at 90% 75%,#ff6448 0 4px,transparent 5px),repeating-linear-gradient(115deg,transparent 0 38px,rgba(255,100,72,.13) 39px 41px,transparent 42px 78px);opacity:.8;pointer-events:none}
+.hero:after{display:block;content:"🎈   🎉   🎈";position:absolute;top:24px;right:28px;font-size:24px;letter-spacing:5px;transform:rotate(7deg);animation:partyFloat 4s ease-in-out infinite;opacity:.95}
+@keyframes partyFloat{50%{transform:rotate(-5deg) translateY(8px)}}
+.ornament,.sparkles{display:none}
+.hero-inner{z-index:1;max-width:620px;text-align:center}
+.kicker{margin:0 auto 20px;padding:8px 15px;border:0;border-radius:999px;background:var(--ink);color:#fff7e9;font-family:'Fredoka',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:2px}
+.birthday-ribbon{display:inline-block;margin-bottom:22px;padding:7px 14px;background:#35b8b0;color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;transform:rotate(-3deg);box-shadow:5px 5px 0 rgba(37,37,37,.12)}
+.number{font-family:'Bowlby One SC',Arial,sans-serif;font-size:clamp(145px,39vw,290px);line-height:.72;letter-spacing:-8px;background:none;color:var(--gold);-webkit-text-stroke:2px var(--ink);text-shadow:9px 9px 0 var(--gold2)}
+.years{margin:24px 0 13px;font-family:'Fredoka',Arial,sans-serif;font-size:22px;font-weight:700;letter-spacing:9px;color:var(--ink)}
+.title{max-width:550px;margin:0 auto 15px;font-family:'Fredoka',Arial,sans-serif;font-size:clamp(25px,5vw,42px);line-height:1.02;font-weight:700;color:var(--ink)}
+.name{margin:0 0 22px;font-family:'Bowlby One SC',Arial,sans-serif;font-size:clamp(32px,7vw,61px);line-height:1;color:var(--gold);letter-spacing:-2px;-webkit-text-stroke:1px var(--ink)}
+.date{font-family:'Fredoka',Arial,sans-serif;font-size:14px;font-weight:600;color:#243b53;letter-spacing:3px}
+.open-btn{margin-top:30px;border-radius:999px;background:var(--gold);color:#fff;padding:16px 24px;font-family:'Fredoka',Arial,sans-serif;font-size:14px;font-weight:700;box-shadow:6px 6px 0 var(--ink)}
+.open-btn:hover{background:var(--gold2);transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.section{padding:88px 34px;background:var(--paper);border-top:0}.section.alt{background:#dff3ef}
+.eyebrow{margin-bottom:15px;text-align:center;font-family:'Fredoka',Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--gold)}
+h2{margin:0 0 28px;text-align:center;font-family:'Fredoka',Arial,sans-serif;font-size:clamp(35px,8vw,58px);line-height:.94;letter-spacing:-1px;color:var(--ink)}
+.invite-text{max-width:570px;margin:auto;text-align:center;font-family:'Fredoka',Arial,sans-serif;font-size:clamp(21px,4vw,30px);line-height:1.2;color:var(--ink)}
+.divider{justify-content:center;margin:30px 0;color:var(--gold);font-size:20px}.divider:before,.divider:after{height:4px;width:48px;background:var(--gold);border-radius:4px}
+.cards{grid-template-columns:repeat(2,1fr);gap:12px;margin-top:30px;background:none;border:0}.card,.card:nth-child(odd){min-height:155px;border:3px solid var(--ink);border-radius:18px;background:#fff;padding:18px;box-shadow:5px 5px 0 var(--gold2)}.card:nth-child(2){box-shadow:5px 5px 0 #35b8b0}.card:nth-child(3){box-shadow:5px 5px 0 var(--gold)}.icon{width:44px;height:44px;margin-bottom:22px;border-radius:50%;background:var(--gold2);display:grid;place-items:center;font-size:22px}.card b{font-family:'Fredoka',Arial,sans-serif;font-size:11px;letter-spacing:1px;color:var(--muted)}.card strong{display:block;margin-top:7px;font-size:15px;color:var(--ink);line-height:1.2}
+.map-btn{justify-content:center;border:3px solid var(--ink);border-radius:999px;padding:15px 20px;color:var(--ink);font-family:'Fredoka',Arial,sans-serif;font-size:13px;font-weight:700;text-transform:none;background:var(--gold2);box-shadow:5px 5px 0 var(--ink)}
+.timer{grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px;background:none;border:0}.timebox{min-height:115px;padding:17px 10px;border:3px solid var(--ink);border-radius:16px;background:#fff;text-align:center}.timebox strong{font-family:'Bowlby One SC',Arial,sans-serif;font-size:clamp(28px,7vw,50px);color:var(--gold)}.timebox span{display:block;margin-top:8px;font-family:'Fredoka',Arial,sans-serif;font-size:10px;font-weight:600;color:var(--ink);letter-spacing:0;text-transform:uppercase}
+.photo-wrap{max-width:520px;margin:auto}.photo-wrap:before{display:block;border:3px solid var(--ink);border-radius:18px;transform:rotate(3deg)}.photo{border-radius:18px;box-shadow:9px 9px 0 var(--gold)}.photo-caption{margin-top:28px;text-align:center;font-family:'Fredoka',Arial,sans-serif;font-size:25px;font-weight:600;color:var(--ink)}
+.footer{padding:96px 34px 112px;text-align:center;background:#243b53}.footer h2{color:#fff7e9}.footer p{font-family:'Fredoka',Arial,sans-serif;color:var(--gold2);font-size:13px}.gold-line{width:100%;margin:22px 0;background:var(--gold2)}
+.music{right:18px;bottom:18px;width:56px;height:56px;border:3px solid var(--ink);border-radius:50%;background:var(--gold2);color:var(--ink);box-shadow:4px 4px 0 var(--ink);font-family:'Fredoka',Arial,sans-serif}.music.on{animation:musicBounce 1.2s ease-in-out infinite}@keyframes musicBounce{50%{transform:translateY(-4px) rotate(8deg)}}
+.loader{background:var(--cream)}.loader-num{font-family:'Bowlby One SC',Arial,sans-serif;color:var(--gold);text-shadow:5px 5px 0 var(--gold2)}.loader p{font-family:'Fredoka',Arial,sans-serif;color:var(--ink);font-size:13px}
+@media(max-width:520px){.hero,.section,.footer{padding-left:20px;padding-right:20px}.hero:after{right:10px;font-size:18px}.cards{grid-template-columns:1fr}.card{min-height:auto}.timer{grid-template-columns:repeat(2,1fr)}.birthday-ribbon{font-size:9px}.number{font-size:clamp(135px,38vw,220px)}}
 </style>
 </head>
 <body class="">
@@ -117,6 +150,7 @@ h2{margin:0 0 28px;text-align:left;font-family:'Space Grotesk',Arial,sans-serif;
   <div class="ornament o1">✦　❧　✦</div><div class="ornament o2">✦　❧　✦</div>
   <div class="sparkles"><span></span><span></span><span></span><span></span></div>
   <div class="hero-inner">
+    <div class="birthday-ribbon">ТУҒАН КҮН · ҚУАНЫШ · 60 ЖАС</div>
     <div class="kicker">МЕРЕЙТОЙ · 2026</div>
     <div class="number">60</div>
     <div class="years">ЖЫЛ</div>
