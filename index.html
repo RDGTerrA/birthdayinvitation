@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>Бақыт анамыздың 60 жасы</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Cormorant+Garamond:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Cormorant+Garamond:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700;800;900&family=Noto+Serif+Display:wght@600;700;800;900&display=swap');
 :root{--cream:#f7f0e5;--paper:#fffaf3;--ink:#35271e;--gold:#b78a43;--gold2:#e0bd7a;--muted:#8d7863;--line:rgba(183,138,67,.3)}
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:#211912;color:var(--ink);font-family:Manrope,Arial,sans-serif} body.lock{overflow:hidden}
 button,a{font:inherit} a{color:inherit;text-decoration:none}
@@ -138,11 +138,11 @@ h2{margin:0 0 28px;text-align:center;font-family:'Fredoka',Arial,sans-serif;font
 .music{right:18px;bottom:18px;width:56px;height:56px;border:3px solid var(--ink);border-radius:50%;background:var(--gold2);color:var(--ink);box-shadow:4px 4px 0 var(--ink);font-family:'Fredoka',Arial,sans-serif}.music.on{animation:musicBounce 1.2s ease-in-out infinite}@keyframes musicBounce{50%{transform:translateY(-4px) rotate(8deg)}}
 .loader{background:var(--cream)}.loader-num{font-family:'Bowlby One SC',Arial,sans-serif;color:var(--gold);text-shadow:5px 5px 0 var(--gold2)}.loader p{font-family:'Fredoka',Arial,sans-serif;color:var(--ink);font-size:13px}
 @media(max-width:520px){.hero,.section,.footer{padding-left:20px;padding-right:20px}.hero:after{right:10px;font-size:18px}.cards{grid-template-columns:1fr}.card{min-height:auto}.timer{grid-template-columns:repeat(2,1fr)}.birthday-ribbon{font-size:9px}.number{font-size:clamp(135px,38vw,220px)}}
-body,.card,.card strong,.card b,.date,.years,.open-btn,.map-btn,.timebox span,.footer p{font-family:'Comic Sans MS','Segoe Print',cursive}
-h1.title,h2,.name,.invite-text,.photo-caption,.loader p{font-family:Impact,'Arial Black',sans-serif}
-.number,.loader-num{font-family:Impact,'Arial Black',sans-serif;font-weight:900}
-.kicker,.birthday-ribbon,.eyebrow{font-family:'Comic Sans MS','Segoe Print',cursive;font-weight:700}
-.title{font-weight:900;letter-spacing:.4px}.name{font-weight:900;letter-spacing:0}.invite-text{font-style:normal}
+body,.card,.card strong,.card b,.date,.years,.open-btn,.map-btn,.timebox span,.footer p{font-family:'Segoe UI',Arial,sans-serif}
+h1.title,h2,.name,.invite-text,.photo-caption,.loader p{font-family:'Segoe UI Black','Segoe UI',Arial,sans-serif}
+.number,.loader-num{font-family:'Bowlby One SC','Segoe UI Black','Segoe UI',Arial,sans-serif;font-weight:900}
+.kicker,.birthday-ribbon,.eyebrow{font-family:'Segoe UI',Arial,sans-serif;font-weight:800}
+.title{font-weight:900;letter-spacing:.2px}.name{font-weight:900;letter-spacing:0}.invite-text{font-style:normal}
 </style>
 </head>
 <body class="">
@@ -204,7 +204,7 @@ h1.title,h2,.name,.invite-text,.photo-caption,.loader p{font-family:Impact,'Aria
 </div>
 
 <button class="music" id="musicBtn" aria-label="Музыканы өшіру" aria-pressed="false">♫</button>
-<audio id="audio" loop preload="auto" autoplay src="birthday.mp3"></audio>
+<audio id="audio" loop preload="auto" autoplay muted src="birthday.mp3"></audio>
 <script>
 const loader=document.getElementById('loader');
 window.addEventListener('load',()=>setTimeout(()=>{loader.classList.add('hide');document.body.classList.remove('lock')},650));
@@ -214,7 +214,8 @@ function tick(){let d=Math.max(0,target-Date.now());let s=Math.floor(d/1000);let
 const audioEl=document.getElementById('audio'),btn=document.getElementById('musicBtn');
 function syncMusicButton(){btn.classList.toggle('on',!audioEl.muted);btn.textContent=audioEl.muted?'♫̸':'♫';btn.setAttribute('aria-label',audioEl.muted?'Музыканы қосу':'Музыканы өшіру');btn.setAttribute('aria-pressed',String(!audioEl.muted));}
 audioEl.addEventListener('play',syncMusicButton);
-document.addEventListener('click',()=>audioEl.play().catch(()=>{}),{once:true});
+audioEl.play().catch(()=>{});
+document.addEventListener('pointerdown',event=>{if(event.target.closest('#musicBtn'))return;audioEl.muted=false;audioEl.play().catch(()=>{});syncMusicButton();},{once:true});
 btn.addEventListener('click',async event=>{event.stopPropagation();try{await audioEl.play();}catch(e){}audioEl.muted=!audioEl.muted;syncMusicButton();});
 syncMusicButton();
 </script>
